@@ -1,0 +1,12 @@
+<h1>All pets</h1>
+
+<ul class='list-group'>
+  <% @pets.each do |pet| %>
+    <li class='list-group-item'>
+      <%= link_to pet.name, pet_path(pet) %>
+      <%= link_to 'Destroy this pet', pet_path(pet), data: { turbo_method: :delete } %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Add a pet', new_pet_path, class: 'btn btn-primary' %>

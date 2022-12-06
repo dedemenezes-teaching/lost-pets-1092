@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+Pet.destroy_all
+
+pets = [
+  { name: 'janis', species: 'elephant', found_on: Date.today, address: 'London' },
+  { name: 'jimi', species: 'cat', found_on: Date.today - 1, address: 'New York' }
+]
+
+puts 'creating pets...'
+
+Pet.create(pets)
+
+puts "Created #{Pet.count} pets"
